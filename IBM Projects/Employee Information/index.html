@@ -1,0 +1,25 @@
+<html>
+    <head>
+        <script>
+        //     function addpa(){
+        //         var newpa = document.createElement("p");
+        //         var newte = document.createTextNode("hello");
+        //         newpa.appendChild(newte);
+        //         document.body.appendChild(newpa);
+        //     }
+        // </script>
+        <title> Employee Management System </title>
+        <header> Employee Management System </header> 
+    </head>
+     <body>
+        <div>
+            <button onclick = "displayEmployees()"> Display Employees </button>
+            <button onclick = "calcTotalSalary()"> Calculate total salaries  </button>
+            <button onclick = "displayHREmployees() "> Display HR Employee </button>
+            <button onclick = "findEmployeeByID() "> Find Employee by ID </button>
+            <button onclick= "findJS('Javascript')">Find by specialization JS</button>
+        </div>
+       <div id = "employeesDetailes"></div>  <!-- Determine how detailes of employees showed in the page -->
+        <script src = "employee_details.js"> </script>
+    </body>
+</html>

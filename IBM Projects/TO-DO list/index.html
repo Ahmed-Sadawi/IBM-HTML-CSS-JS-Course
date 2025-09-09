@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> TO-DO list </title>
+        <style>
+        /* Styles the main container of the to-do list */
+        .todo-container {
+            width: 300px;
+            margin: 50px auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        
+        /* Removes default list styling for the to-do list */
+        .todo-list {
+            list-style-type: none;
+            padding: 0;
+        }
+        /* Styles each list item in the to-do list */
+        li {
+            margin: 10px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        /* Adds spacing for buttons in list items */
+        button {
+            margin-left: 10px;
+        }
+    </style>
+
+    </head>
+<body>
+    <div class="todo-container">
+        <h1> To-Do list </h1>
+        <input type="text" id="taskInput" placeholder="Add a new task">
+        <button class="add-btn" onclick="add2()"> Add Task </button>
+        <ul class="todo-list" id="todoList"></ul>
+    </div>
+    <script>
+        // InnetHTML method
+        function add(){
+            const newItem = document.getElementById("taskInput");
+            const taskText = newItem.value.trim();
+            if(taskText !== ""){
+                document.getElementById("todoList").innerHTML += `
+                <li>
+                    <span>${taskText}</span>
+                    <button onclick="editTask(this.previousElementSibling)">Edit</button>
+                    <button onclick="remoTask(this)"> Delete </button>
+                </li>
+                `;
+                newItem.value ="";
+            }
+        }
+        function editTask(currEl){
+            const newText = prompt("Edit task: ", currEl.textContent);
+            if(newText !== null && newText.trim() !=="")currEl.textContent = newText.trim();
+        }
+        function remoTask(currEl){
+            currEl.parentElement.remove();
+        }
+
+
+        function add2(){
+            const theElem = document.getElementById("taskInput");
+            const taskText = theElem.value.trim();
+            if(taskText !== ""){
+                const ul = document.getElementById("todoList");
+                const li = document.createElement("li");
+                const span = document.createElement("span");
+                span.textContent = taskText;
+
+                const edit = document.createElement("button");
+                edit.textContent = "Edit";
+                edit.onclick = () => editT(span);
+
+                const remo = document.createElement("button");
+                remo.textContent = "Delete";
+                remo.onclick = () => del(li);
+
+                li.appendChild(span);
+                li.appendChild(edit);
+                li.appendChild(remo);
+
+                ul.appendChild(li);
+
+                theElem.value ="";
+            }
+        }
+
+        function editT(el){
+            const newTask = prompt("Edit your task:" ,el.textContent)
+            if(newTask !== null && newTask.trim()!==""){
+                el.textContent = newTask.trim();
+            }
+        }
+
+        function del(el){
+            el.remove();
+        }
+
+
+        
+    </script>
+</body>
+</html>
