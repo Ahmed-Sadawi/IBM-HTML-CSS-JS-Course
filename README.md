@@ -20,7 +20,10 @@ It covers the fundamentals of **HTML, CSS, and JavaScript** — the building blo
 - Small experiments I built while learning.  
 
 ---
+## 🚀 Live Demo
+**[View All Projects Live](https://ahmed-sadawi.github.io/IBM-HTML-CSS-JS-Course/)**
 
+Practice projects and notes from IBM's HTML, CSS, and JavaScript course.
 ## 🏆 What I Learned
 - How to build **well-structured web pages** with semantic HTML.  
 - How to use **CSS** for responsive design and styling.  
